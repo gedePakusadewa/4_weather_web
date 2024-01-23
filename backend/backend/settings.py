@@ -127,3 +127,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+WEATHER_API='http://api.weatherapi.com/v1/current.json'
+WEATHER_API_KEY='322acc90c4574dd893e35730242201'
