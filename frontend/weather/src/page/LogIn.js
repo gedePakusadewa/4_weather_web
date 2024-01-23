@@ -24,6 +24,7 @@ const LogIn = () =>{
     <>
       <div className="form-container">
         <div>
+          <h2 className="">Welcome To Check Weather</h2>
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 
             type="text"

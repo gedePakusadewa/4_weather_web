@@ -50,7 +50,7 @@ Source API -> https://www.weatherapi.com/
 - fix issue in git ignore when created new init
 - update Readme
 - create new view to handle weather API
-- Init frontend
+- Init frontend and implement token auth/autho
 
 Issue and solution
 

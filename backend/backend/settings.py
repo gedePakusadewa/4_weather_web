@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'weather',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -130,3 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 WEATHER_API='http://api.weatherapi.com/v1/current.json'
 WEATHER_API_KEY='322acc90c4574dd893e35730242201'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]

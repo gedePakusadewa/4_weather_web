@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from "axios";
+import UrlConst from "../resource/Url.js"
+
 import { useNavigate, } from "react-router-dom";
 import { AuthContext } from "../App.js";
 import { useCookies } from 'react-cookie';
@@ -11,7 +13,9 @@ const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const handleLogin = async (username, password) => {      
-      axios.post(`http://127.0.0.1:8000/api/practice_authentication/login`, {
+      console.log(UrlConst.LOGIN)
+
+      axios.post(UrlConst.LOGIN, {
         username, password
       }).
       then((res) => {
@@ -28,7 +32,7 @@ const AuthProvider = ({ children }) => {
     };
 
     const handleSubmitSignUp = async (username, password, email) => {      
-      axios.post(`http://127.0.0.1:8000/api/practice_authentication/signup`, {
+      axios.post(UrlConst.SIGNUP, {
         username, password, email
       }).
       then((res) => {
@@ -40,11 +44,11 @@ const AuthProvider = ({ children }) => {
   
     const handleLogout = (currToken) => {
       // at the time ( 19 january 2024 (UTC+08:00) ), somehow i can 
-      // not dirrect using cookies state into headers
+      // not directly using cookies state into headers
       // next find out why this happen
       axios({
         method: 'delete',
-        url: "http://127.0.0.1:8000/api/practice_authentication/logout",
+        url: UrlConst.LOGOUT,
         headers: {'Authorization': "Token " + currToken},
       }).then((res) => {
         setToken(null);
