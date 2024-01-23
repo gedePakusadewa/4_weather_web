@@ -51,7 +51,9 @@ Source API -> https://www.weatherapi.com/
 - update Readme
 - create new view to handle weather API
 - Init frontend
+
 Issue and solution
+
 - https://stackoverflow.com/a/19757964
 - https://stackoverflow.com/a/14617309
 - https://reintech.io/blog/connecting-to-external-api-in-django
