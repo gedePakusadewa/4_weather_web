@@ -60,9 +60,22 @@ input{
     border-radius: 3px;
 }
 
-.title-container{
+.today-container{
     display: flex;
-    height: 100px;
+    width: 70%;
     justify-content: center;
     padding-top: 100px;
+}
+
+.forecast-container{
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    padding-top: 100px;
+    border: 1px solid white
+}
+
+.main-container{
+    display: flex;
+    width: 100%;
 }

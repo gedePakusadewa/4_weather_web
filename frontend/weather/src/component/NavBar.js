@@ -17,14 +17,21 @@ function Navbar() {
             <button 
               className="btn btn-navbar"
             >
-              {GeneralConst.HOME}
+              {GeneralConst.DASHBOARD}
             </button>
           </Link>
-          <Link to="/about">
+          <Link to="/settings">
           <button 
               className="btn btn-navbar"
             >
-              {GeneralConst.ABOUT}
+              {GeneralConst.SETTINGS}
+            </button>
+          </Link>
+          <Link to="/profile">
+          <button 
+              className="btn btn-navbar"
+            >
+              {GeneralConst.PROFILE}
             </button>
           </Link>
           {cookies['token'] !== undefined && (

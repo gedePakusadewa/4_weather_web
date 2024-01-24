@@ -32,6 +32,7 @@ Key Features:
 - Front-end:
   Use a modern front-end framework like React, Vue, or Angular.
   Utilize HTML, CSS, and JavaScript for the user interface.
+  Ref: https://uizard.io/static/9e9f1bfeac21afca096f9e286390cc6e/d9bdf/weather-web-dark-home.png
 - Back-end:
   Choose a back-end framework such as Express.js (Node.js), Django (Python), or Spring Boot (Java). 
   Implement RESTful APIs to handle user authentication, location search, and weather data retrieval.
@@ -45,12 +46,39 @@ Key Features:
   Deploy your application on platforms like Heroku, Netlify, or Vercel.
 
 Source API -> https://www.weatherapi.com/
+
+---
+##### Day 3 goal:
+- check what paged are needed and then create it
+  - page dashboard
+    - next 7- day forecast component
+    - today all day long forecast component
+    - main componentn -> display choosen city, display icon weather, display temperature
+    - air condition component
+  - page settings
+    - chooses using celcisius or fahrenheit
+    - choose permanent city for user
+    - enable darkmode
+  - page profile
+    - change photo profile
+    - change biodata
+  - use #030637 as background color
+- user can see current weather based on location and forecasted it too
+- understand the weather api
+
+
+Issue and solution
+
+
 ---
 ##### Day 2 goal:
 - fix issue in git ignore when created new init
 - update Readme
 - create new view to handle weather API
 - Init frontend and implement token auth/autho
+- Read again the requirement and make next goal
+
+> Feature "User Authentication" DONE
 
 Issue and solution
 
@@ -61,4 +89,4 @@ Issue and solution
 ---
 ##### Day 1 goal:
 - create backend
-- create Log In, Sign Up, and Log Out with token auth/autho 
+- create Log In, Sign Up, and Log Out with token auth/autho

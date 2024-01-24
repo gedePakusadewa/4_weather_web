@@ -62,7 +62,10 @@ class LogOut(generics.GenericAPIView):
         except:
             pass
 
-        return Response({"Success":"Success Log Out"}, status=status.HTTP_200_OK)
+        return Response(
+            {"Success":"Success Log Out"},
+            status=status.HTTP_200_OK
+        )
 
 class Weather(generics.GenericAPIView):
     serializer_class = UserSerializer
@@ -75,10 +78,13 @@ class Weather(generics.GenericAPIView):
         weather_api_key = getattr(settings, "WEATHER_API_KEY", None)
 
         try:
-            url = weather_url + "?key=" + weather_api_key + "&q=jakarta&aqi=no"
+            url = weather_url + "?key=" + weather_api_key + "&q=" + request.GET.get('location') + "&aqi=no"
             response = requests.get(url)
             data = response.json()
             
             return JsonResponse(data)
         except:
-            return Response({"Error":"Something wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(
+                {"Error":"Something wrong"},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )

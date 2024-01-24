@@ -7,7 +7,10 @@ const General = {
     EMAIL:"Email",
     LOGIN:"Log In",
     SIGNUP:"Sign Up",
-    SUBMIT:"Submit"
+    SUBMIT:"Submit",
+    DASHBOARD:"Dashboard",
+    SETTINGS:"Settings",
+    PROFILE:"Profile"
   };
   
   export default General
