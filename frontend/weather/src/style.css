@@ -61,10 +61,7 @@ input{
 }
 
 .today-container{
-    /* display: flex; */
     width: 70vw;
-    /* justify-content: center;
-    padding-top: 100px; */
     border: 1px solid red;
     
 }
@@ -113,13 +110,11 @@ input{
 }
 
 .curr-weather-container > div {
-    /* border: 1px solid blue; */
     width: 100%;
     text-align: center;
 }
 
 .curr-weather-container > div:first-child {
-    /* border: 1px solid blue; */
     text-align: left;
     font-size: 40px;
     padding-left: 30px;
@@ -128,7 +123,6 @@ input{
 .curr-weather-container > div:first-child > span:first-child{
     padding-bottom: 10px;    
 }
-
 
 .wrap-content-air-conditions{
     display: flex;

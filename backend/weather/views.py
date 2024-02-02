@@ -1,8 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import UserSerializer
+from .serializers import UserSerializer, SettingSerializer
 from rest_framework import status, generics
 from django.contrib.auth.models import User
+from weather.models import Setting as SettingModel
 from rest_framework.authtoken.models import Token
 
 from django.shortcuts import get_object_or_404
@@ -88,3 +89,51 @@ class Weather(generics.GenericAPIView):
                 {"Error":"Something wrong"},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
+        
+class Setting(generics.GenericAPIView):
+    serializer_class = SettingSerializer
+    queryset = SettingModel.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        settingData = self.get_setting((request.data['user']))
+
+        if  settingData == None:
+            serializer_class = self.serializer_class(data=request.data)
+
+            if serializer_class.is_valid():
+                serializer_class.save()
+
+                return Response(serializer_class.data, status=status.HTTP_201_CREATED)
+        else:
+            serializer_class = self.serializer_class(settingData, data=request.data, partial=True)
+
+            if serializer_class.is_valid():
+                serializer_class.save()
+
+                return Response(serializer_class.data, status=status.HTTP_200_OK)
+        
+        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get_setting(self, user_id):
+        try:        
+            return SettingModel.objects.get(user_id=user_id)
+        except Exception as e:
+            return None
+    
+    def get(self, request):
+        settingData = self.get_setting((request.data['user']))
+
+        if not settingData:
+            return Response(
+                {
+                    "status": "fail",
+                    "message": f"Setting with Id: {pk} not found"
+                },
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        serializer_class = self.serializer_class(settingData)
+        
+        return Response(serializer_class.data)

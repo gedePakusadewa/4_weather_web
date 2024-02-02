@@ -47,7 +47,7 @@ Key Features:
 
 Source API -> https://www.weatherapi.com/
 ---
-##### Day 8 goal:
+##### Day XX goal:
 - understand the weather api
 - migrate from fontawesopme icon to weather app icon
   - the example already in dashboard
@@ -55,8 +55,18 @@ Source API -> https://www.weatherapi.com/
 - make city and temperature scale work
   
 Issue and solution
+- can get data setting from DB, it get exceptions
+  - fix by change seting model name from "setting" to "settingModel"
 - 
 
+---
+##### Day 8 goal:
+- make api for settting
+  
+Issue and solution
+- can get data setting from DB, it get exceptions
+  - fix by change seting model name from "setting" to "settingModel"
+- 
 
 ---
 ##### Day 7 goal:
