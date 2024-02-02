@@ -78,7 +78,7 @@ class Weather(generics.GenericAPIView):
         weather_api_key = getattr(settings, "WEATHER_API_KEY", None)
 
         try:
-            url = weather_url + "?key=" + weather_api_key + "&q=" + request.GET.get('location') + "&aqi=no"
+            url = weather_url + "?key=" + weather_api_key + "&q=" + request.GET.get('location') + "&aqi=no&alerts=no&days=8"
             response = requests.get(url)
             data = response.json()
             

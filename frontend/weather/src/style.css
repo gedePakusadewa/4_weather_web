@@ -9,6 +9,8 @@
     font-weight: 600;
     margin: 4px 2px;
     cursor: pointer;
+    width: 100%;
+    background-color: #2e3347;
 }
 
 .btn-signup{
@@ -52,30 +54,91 @@ input{
 
 .btn-navbar{
     background-color: #0d6efd;
-    border-radius: 3px;
 }
 
 .btn-navbar-logout{
     background-color: #ffc107;
-    border-radius: 3px;
 }
 
 .today-container{
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    padding-top: 100px;
+    /* display: flex; */
+    width: 70vw;
+    /* justify-content: center;
+    padding-top: 100px; */
+    border: 1px solid red;
+    
+}
+
+.today-container > div {
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #2e3347;
+    padding-top: 20px;
+    
 }
 
 .forecast-container{
     display: flex;
     width: 30%;
     justify-content: center;
-    padding-top: 100px;
     border: 1px solid white
 }
 
 .main-container{
     display: flex;
     width: 100%;
+}
+
+.forecast-container > div {
+    margin-top: 40px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: #2e3347;
+}
+
+.container-navbar{
+    margin: 40px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    height:100%;
+    background-color: #2e3347;
+}
+
+.curr-weather-container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.curr-weather-container > div {
+    /* border: 1px solid blue; */
+    width: 100%;
+    text-align: center;
+}
+
+.curr-weather-container > div:first-child {
+    /* border: 1px solid blue; */
+    text-align: left;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+.curr-weather-container > div:first-child > span:first-child{
+    padding-bottom: 10px;    
+}
+
+
+.wrap-content-air-conditions{
+    display: flex;
+}
+
+.wrap-content-today-forecast{
+    display: flex;
+}
+
+.img-test{
+    width: 500px;
+    height: auto;
 }

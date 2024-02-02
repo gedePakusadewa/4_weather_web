@@ -14,6 +14,8 @@ import './App.css';
 
 export const AuthContext = React.createContext(null);
 
+library.add(fas)
+
 function App() {
   return (
     <div className="App-container">

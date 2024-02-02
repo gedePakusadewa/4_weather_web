@@ -130,7 +130,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-WEATHER_API='http://api.weatherapi.com/v1/current.json'
+WEATHER_API='http://api.weatherapi.com/v1/forecast.json'
 WEATHER_API_KEY='322acc90c4574dd893e35730242201'
 
 CORS_ALLOWED_ORIGINS = [

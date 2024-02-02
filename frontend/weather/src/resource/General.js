@@ -10,7 +10,10 @@ const General = {
     SUBMIT:"Submit",
     DASHBOARD:"Dashboard",
     SETTINGS:"Settings",
-    PROFILE:"Profile"
+    PROFILE:"Profile",
+    INPUT_CITY_TITLE:"City",
+    INPUT_TEMPERATURE_TITLE:"Available Unit",
+    INPUT_DARK_MODE_TITLE:"Use Dark Mode"
   };
   
   export default General

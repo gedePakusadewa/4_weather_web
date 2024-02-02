@@ -1,5 +1,6 @@
 import Navbar from "../component/NavBar.js";
 import GeneralConst from "../resource/General.js"
+import { InputBiodata } from "../component/Input.js";
 import "../style.css";
 
 const Profile = () =>{
@@ -9,6 +10,7 @@ const Profile = () =>{
       <div className="title-container">
         <h1>{GeneralConst.PROFILE}</h1>
       </div>
+      <InputBiodata />
     </>
   )
 }

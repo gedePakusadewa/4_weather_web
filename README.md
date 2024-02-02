@@ -46,6 +46,56 @@ Key Features:
   Deploy your application on platforms like Heroku, Netlify, or Vercel.
 
 Source API -> https://www.weatherapi.com/
+---
+##### Day 8 goal:
+- understand the weather api
+- migrate from fontawesopme icon to weather app icon
+  - the example already in dashboard
+  - make it dynamic
+- make city and temperature scale work
+  
+Issue and solution
+- 
+
+
+---
+##### Day 7 goal:
+- understand the weather api
+- start display next 7 day forecast
+  - display next day forecast in exact time as today
+
+Issue and solution
+- 
+
+---
+##### Day 6 goal:
+- understand the weather api
+- start display today forecast
+  - display hour based on response from API not from local browser time
+- start display next 7 day forecast
+
+Issue and solution
+- do weather API using utc for time key?
+- issue in making vlaue between hour today forecast
+- isue why data from usestate is empty
+
+---
+##### Day 5 goal:
+- understand the weather api
+- start working on simple UI  profile, and settings
+- 
+
+Issue and solution
+- None
+  
+---
+##### Day 4 goal:
+- understand the weather api
+- start working on UI only fo dashboard based on ref picture
+
+
+Issue and solution
+- https://stackoverflow.com/a/10797856
 
 ---
 ##### Day 3 goal:
@@ -68,7 +118,7 @@ Source API -> https://www.weatherapi.com/
 
 
 Issue and solution
-
+- None
 
 ---
 ##### Day 2 goal:

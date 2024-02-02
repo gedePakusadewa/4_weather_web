@@ -15,28 +15,28 @@ function Navbar() {
         <nav>
           <Link to="/">
             <button 
-              className="btn btn-navbar"
+              className="btn"
             >
               {GeneralConst.DASHBOARD}
             </button>
           </Link>
           <Link to="/settings">
           <button 
-              className="btn btn-navbar"
+              className="btn"
             >
               {GeneralConst.SETTINGS}
             </button>
           </Link>
           <Link to="/profile">
           <button 
-              className="btn btn-navbar"
+              className="btn"
             >
               {GeneralConst.PROFILE}
             </button>
           </Link>
           {cookies['token'] !== undefined && (
             <button
-              className="btn btn-navbar-logout"
+              className="btn"
               onClick={()=>context.handleLogout(cookies['token'])}
             >
               {GeneralConst.LOGOUT}
