@@ -6,7 +6,6 @@ import { InputIsDarkMode } from "../component/Input.js";
 import { useEffect, useState } from "react";
 import "../style.css";
 
-
 const Setting = () =>{
   const [selectedCity, setSelectedCity] = useState("")
   const [selectedTemperatureUnit, setSelectedTemperatureUnit] = useState("")

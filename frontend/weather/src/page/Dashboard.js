@@ -23,9 +23,10 @@ const Dashboard = () => {
   const [currentLocalTime, setCurrentLocalTime] = useState("")
   const [next7DaysForecast, setNext7DaysForecast] = useState(null)
   const [currentNext7DaysForecast, setCurrentNext7DaysForecast] = useState(null)
+  const [iconURL, setIconURL] = useState(null)
 
   useEffect(() => {
-    getWeatherData("jakarta")
+    getWeatherData()
   }, [])
 
   useEffect(() => {
@@ -39,9 +40,6 @@ const Dashboard = () => {
     axios({
       method: 'get',
       url: UrlConst.GETWEATHER,
-      params: {
-        location: location
-      },
       headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
     }).then((res) => {
       setCity(res.data.location.name)
@@ -52,8 +50,8 @@ const Dashboard = () => {
       setHumidity(res.data.current.humidity)
       setTodayForecast(res.data.forecast.forecastday[0].hour)
       setCurrentLocalTime(res.data.location.localtime)
-
       setNext7DaysForecast(res.data.forecast.forecastday)
+      setIconURL(res.data.current.condition.icon)
     })
   };
   
@@ -104,7 +102,6 @@ const Dashboard = () => {
     }
 
     return null
-
   }
 
   return(
@@ -116,11 +113,10 @@ const Dashboard = () => {
             <span>{temp} &deg;C</span>
           </div>
           <div>
-          <img 
-            className="img-test"
-            src={"https://cdn.weatherapi.com/weather/64x64/day/116.png"}
-          />
-            <GetIconWeather condition={condition}/>
+            <GetIconWeather
+              condition={condition}
+              iconURL={iconURL}
+            />
           </div>
         </div>
         <div>
@@ -130,7 +126,7 @@ const Dashboard = () => {
                 return(
                   <GetIconTodayWeather 
                     hour={data.hour}
-                    condition={data.condition.text}
+                    iconURL={data.condition.icon}
                     degree={data.temp_c}
                   />
                 )      

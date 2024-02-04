@@ -74,12 +74,21 @@ class Weather(generics.GenericAPIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
+    def get_setting(self, user_id):
+        try:        
+            return SettingModel.objects.get(user_id=user_id)
+        except Exception as e:
+            return None
+
     def get(self, request):
         weather_url = getattr(settings, "WEATHER_API", None)
         weather_api_key = getattr(settings, "WEATHER_API_KEY", None)
 
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        settingData = self.get_setting(user_id)
+
         try:
-            url = weather_url + "?key=" + weather_api_key + "&q=" + request.GET.get('location') + "&aqi=no&alerts=no&days=8"
+            url = weather_url + "?key=" + weather_api_key + "&q=" + settingData.city + "&aqi=no&alerts=no&days=8"
             response = requests.get(url)
             data = response.json()
             

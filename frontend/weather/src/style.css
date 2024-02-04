@@ -132,7 +132,12 @@ input{
     display: flex;
 }
 
-.img-test{
-    width: 500px;
+.img-main{
+    width: 150px;
+    height: auto;
+}
+
+.img-next-7-days{
+    width: 50px;
     height: auto;
 }
