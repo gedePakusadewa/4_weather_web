@@ -97,8 +97,8 @@ class Setting(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
-        settingData = self.get_setting((request.data['user']))
-
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        settingData = self.get_setting(user_id)
         if  settingData == None:
             serializer_class = self.serializer_class(data=request.data)
 
@@ -122,14 +122,15 @@ class Setting(generics.GenericAPIView):
         except Exception as e:
             return None
     
-    def get(self, request):
-        settingData = self.get_setting((request.data['user']))
+    def get(self, request):        
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        settingData = self.get_setting(user_id)
 
         if not settingData:
             return Response(
                 {
                     "status": "fail",
-                    "message": f"Setting with Id: {pk} not found"
+                    "message": "Setting config not found"
                 },
                 status=status.HTTP_404_NOT_FOUND
             )

@@ -55,10 +55,10 @@ Source API -> https://www.weatherapi.com/
 - make city and temperature scale work
   
 Issue and solution
-- can get data setting from DB, it get exceptions
-  - fix by change seting model name from "setting" to "settingModel"
-- 
-
+- onChange select not always updated?
+  - need to force select defautl value updated manually
+- hopw to get user information based on token?
+  - 
 ---
 ##### Day 8 goal:
 - make api for settting
