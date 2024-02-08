@@ -50,6 +50,8 @@ Source API -> https://www.weatherapi.com/
 ##### Day 10 goal:
 - make profile work
   - create backend API to update and get data
+  - make fecth method to get data from api and display it
+  - make username and email can be update by submit button
 - running TOKEN authentication
   
 Issue and solution

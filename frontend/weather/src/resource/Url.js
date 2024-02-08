@@ -3,7 +3,8 @@ const Url = {
     SIGNUP:"http://127.0.0.1:8000/api/v1/weather/signup",
     LOGOUT:"http://127.0.0.1:8000/api/v1/weather/logout",
     GETWEATHER:"http://localhost:8000/api/v1/weather/weather",
-    GETSETTING: "http://localhost:8000/api/v1/weather/setting"
+    GETSETTING: "http://localhost:8000/api/v1/weather/setting",
+    GETPROFILE: "http://localhost:8000/api/v1/weather/profile"
   };
   
   export default Url
