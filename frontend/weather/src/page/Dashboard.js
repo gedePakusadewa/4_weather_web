@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
-import AirConditionConst from "../resource/AirCondition.js";
+import { useCookies } from 'react-cookie';
 import {
   GetIconWeather,
   GetIconAirCondition,
   GetIconTodayWeather,
   GetIconNextDaysWeather
 } from '../helper/GetIconWeather.js';
+import AirConditionConst from "../resource/AirCondition.js";
 import UrlConst from "../resource/Url.js"
 import axios from "axios";
 import "../style.css";
 
 const Dashboard = () => {
+  const [cookies, setCookie] = useCookies(['user']);
+
   const [city, setCity] = useState("")
   const [temp, setTemp] = useState("")
   const [condition, setCondition] = useState("")
@@ -39,7 +42,7 @@ const Dashboard = () => {
     axios({
       method: 'get',
       url: UrlConst.GETWEATHER,
-      headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
+      headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
       setCity(res.data.location.name)
       setTemp(res.data.current.temp_c)

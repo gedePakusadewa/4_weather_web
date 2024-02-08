@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
 import Navbar from "../component/NavBar.js";
 import GeneralConst from "../resource/General.js"
 import UrlConst from "../resource/Url.js"
@@ -6,22 +7,23 @@ import axios from "axios";
 import "../style.css";
 
 const Profile = () =>{
-  const [isUpdated, setIsUpdated] = useState(false)
   const [city, setCity] = useState("")
   const [form, setForm] = useState({
     username:"",
     email:""
   });
 
+  const [cookies, setCookie] = useCookies(['user']);
+
   useEffect(() => {
     getProfile()
-  }, [isUpdated])
+  }, [])
 
   const getProfile = async () => {    
     axios({
       method: 'get',
       url: UrlConst.GETPROFILE,
-      headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
+      headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
       setCity(res.data.setting.city)
       setForm({
@@ -39,9 +41,7 @@ const Profile = () =>{
         username:form.username,
         email:form.email
       },
-      headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
-    }).then((res) => {
-      setIsUpdated(true)
+      headers: {'Authorization': "Token " + cookies['token']},
     })
   };
 

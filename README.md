@@ -46,6 +46,14 @@ Key Features:
   Deploy your application on platforms like Heroku, Netlify, or Vercel.
 
 Source API -> https://www.weatherapi.com/
+
+---
+##### Day XX goal:
+- 
+  
+Issue and solution
+
+
 ---
 ##### Day 10 goal:
 - make profile work

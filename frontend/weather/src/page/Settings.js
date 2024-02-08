@@ -4,17 +4,20 @@ import axios from "axios";
 import UrlConst from "../resource/Url.js";
 import { InputIsDarkMode } from "../component/Input.js";
 import { useEffect, useState } from "react";
+import { useCookies } from 'react-cookie';
 import "../style.css";
 
 const Setting = () =>{
   const [selectedCity, setSelectedCity] = useState("")
   const [selectedTemperatureUnit, setSelectedTemperatureUnit] = useState("")
 
+  const [cookies, setCookie] = useCookies(['user']);
+
   useEffect(() => {
     axios({
       method: 'get',
       url: UrlConst.GETSETTING,
-      headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
+      headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
       setSelectedCity(res.data.city)
       setSelectedTemperatureUnit(res.data.unit)
@@ -59,7 +62,7 @@ const Setting = () =>{
         city: selectedCity,
         unit: selectedTemperatureUnit
       },
-      headers: {'Authorization': "Token " + "3d0adf1672d2a823194b0ef42daa5bef49776df6"},
+      headers: {'Authorization': "Token " + cookies['token']},
     })
   }
 
