@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "8039f134-8215-4a5a-92b2-ce9c6796d6aa",
+		"name": "4_weather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31985802"
+	},
+	"item": [
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"temp123\",\r\n    \"email\":\"user1@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/weather/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "log in",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token cff85817fbff9c47a669f900eb22d627bcb87100",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"temp123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/weather/login"
+			},
+			"response": []
+		},
+		{
+			"name": "log out",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token cff85817fbff9c47a669f900eb22d627bcb87100",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/v1/weather/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "sample weather API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.weatherapi.com/v1/current.json?key=322acc90c4574dd893e35730242201&q=jakarta&aqi=no",
+					"protocol": "http",
+					"host": [
+						"api",
+						"weatherapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"current.json"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "322acc90c4574dd893e35730242201"
+						},
+						{
+							"key": "q",
+							"value": "jakarta"
+						},
+						{
+							"key": "aqi",
+							"value": "no"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWeather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/v1/weather/GetWeather"
+			},
+			"response": []
+		},
+		{
+			"name": "create/update setting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\":\"JAKARTA\",\r\n    \"unit\":\"CELCIUS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/weather/setting"
+			},
+			"response": []
+		},
+		{
+			"name": "get setting",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/weather/setting"
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 3d0adf1672d2a823194b0ef42daa5bef49776df6",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/v1/weather/profile"
+			},
+			"response": []
+		},
+		{
+			"name": "update profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 3d0adf1672d2a823194b0ef42daa5bef49776df6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user44\",\r\n    \"email\": \"user1@adf.com\",\r\n    \"city\": \"JAKARTA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/v1/weather/profile"
+			},
+			"response": []
+		}
+	]
+}

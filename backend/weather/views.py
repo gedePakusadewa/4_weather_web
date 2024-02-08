@@ -179,3 +179,16 @@ class Profile(generics.GenericAPIView):
 
         return Response({"user" : serializer_user.data, "setting" : serializer_setting.data})
     
+    def post(self, request):
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        user = User.objects.get(pk=user_id)
+
+        if user is not None:
+            serializer_user = self.serializer_class(user, data=request.data, partial=True)
+
+            if  serializer_user.is_valid():
+                serializer_user.save()
+
+                return Response(status=status.HTTP_200_OK)
+            
+        return Response(serializer_user.errors, status=status.HTTP_400_BAD_REQUEST)
