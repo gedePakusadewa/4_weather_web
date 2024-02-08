@@ -62,7 +62,7 @@ input{
 
 .today-container{
     width: 70vw;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     
 }
 
@@ -79,7 +79,7 @@ input{
     display: flex;
     width: 30%;
     justify-content: center;
-    border: 1px solid white
+    /* border: 1px solid white */
 }
 
 .main-container{
