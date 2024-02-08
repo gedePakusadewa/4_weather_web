@@ -9,7 +9,6 @@ import {
 import UrlConst from "../resource/Url.js"
 import axios from "axios";
 import "../style.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Dashboard = () => {
   const [city, setCity] = useState("")

@@ -47,7 +47,17 @@ Key Features:
 
 Source API -> https://www.weatherapi.com/
 ---
-##### Day XX goal:
+##### Day 10 goal:
+- make profile work
+  - create backend API to update and get data
+- running TOKEN authentication
+  
+Issue and solution
+- how to comnbine two serializer?
+  - simple answer by just return data with two serializer (https://stackoverflow.com/a/45415165)
+
+--- 
+##### Day 9 goal:
 - understand the weather api
 - migrate from fontawesopme icon to weather app icon
   - the example already in dashboard
@@ -58,7 +68,7 @@ Issue and solution
 - onChange select not always updated?
   - need to force select defautl value updated manually
 - hopw to get user information based on token?
-  - 
+  - by get token first and then using this token data to user data from library
 ---
 ##### Day 8 goal:
 - make api for settting

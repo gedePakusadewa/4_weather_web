@@ -147,3 +147,35 @@ class Setting(generics.GenericAPIView):
         serializer_class = self.serializer_class(settingData)
         
         return Response(serializer_class.data)
+    
+class Profile(generics.GenericAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get_setting(self, user_id):
+        try:        
+            return SettingModel.objects.get(user_id=user_id)
+        except Exception as e:
+            return None
+
+    def get(self, request):        
+        user_id = Token.objects.get(key=request.auth.key).user_id
+        settingData = self.get_setting(user_id)
+        user = User.objects.get(pk=user_id)
+
+        if not settingData:
+            return Response(
+                {
+                    "status": "fail",
+                    "message": "Setting config not found"
+                },
+                status=status.HTTP_404_NOT_FOUND
+            )
+        
+        serializer_setting = SettingSerializer(settingData)
+        serializer_user = self.serializer_class(instance=user)
+
+        return Response({"user" : serializer_user.data, "setting" : serializer_setting.data})
+    
