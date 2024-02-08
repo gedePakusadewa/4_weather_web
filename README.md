@@ -1,5 +1,13 @@
 ### This project idea is generated from ChatGPT
 ---
+## Project preview 
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/1-1.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/1.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/2.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/3.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/4.png)
+
+--
 # Project Idea: Weather Dashboard
 
 Description:
