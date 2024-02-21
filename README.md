@@ -56,11 +56,18 @@ Key Features:
 Source API -> https://www.weatherapi.com/
 
 ---
-##### Day XX goal:
-- 
+##### Day 11:
+- update style/code login/sign up page
+  - add backgroung image for login/sign up page
+  - add new words to general const
+  - udpate some color based on color palete bg image
+  - fix error when empty login/signup form is submitted
+  - add wrong username/password notifications
+- analyses what think can be improve
+ - 
   
 Issue and solution
-
+- 
 
 ---
 ##### Day 10 goal:

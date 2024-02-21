@@ -13,16 +13,6 @@
     background-color: #2e3347;
 }
 
-.btn-signup{
-    border-radius: 8px;
-    background-color: #ffc107;
-}
-
-.btn-login{
-    border-radius: 8px;
-    background-color: #008CBA;
-}
-
 input{
     border-radius: 5px;
     width: 100%;
@@ -32,19 +22,88 @@ input{
     border: 2px solid #f1f1f1;
 }
 
-.form-container{
+/* login */
+
+.login-container{
+    background-image: url("../public/cloud_1.jpg");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
 }
 
-.form-container > div {
+.login-wrapper > div {
   width: 300px;
-  background-color: #eeeeeb;
+  background-color: #72869B;
   padding: 20px;
-  border-radius: 2px;
+  border-radius: 5px;
+  margin-top: 60px;
 }
+
+.title-login{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.btn-login{
+    border-radius: 8px;
+    background-color: #051538;
+}
+
+.btn-signup{
+    border-radius: 8px;
+    background-color: #C0BBB5;
+}
+
+.wrong-username-password{
+    color: red;
+}
+
+/* end login */
+
+/* sign up  */
+
+.btn-signup-submit{
+    border-radius: 8px;
+    background-color: #051538;
+}
+
+.btn-back-to-login{
+    border-radius: 8px;
+    background-color: #C0BBB5;  
+}
+
+.signup-container{
+    background-image: url("../public/cloud_1.jpg");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-wrapper > div {
+  width: 300px;
+  background-color: #72869B;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 60px;
+}
+
+/* end sign up  */
 
 .container-navbar{
     display: flex;

@@ -9,17 +9,21 @@ import { useCookies } from 'react-cookie';
 const AuthProvider = ({ children }) => {
     const [token, setToken] = React.useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
+    const [isErrorInput, setIsErrorInput] = React.useState(false);
 
     const navigate = useNavigate();
 
     const handleLogin = async (username, password) => {      
       axios.post(UrlConst.LOGIN, {
         username, password
-      }).
-      then((res) => {
+      }).then((res) => {
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
+        setIsErrorInput(false)
+      })
+      .catch((err) => {
+        setIsErrorInput(true)
       })
       
       // for fake API
@@ -32,11 +36,14 @@ const AuthProvider = ({ children }) => {
     const handleSubmitSignUp = async (username, password, email) => {      
       axios.post(UrlConst.SIGNUP, {
         username, password, email
-      }).
-      then((res) => {
+      }).then((res) => {
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
+        setIsErrorInput(false)
+      })
+      .catch((err) => {
+        setIsErrorInput(true)
       })
     };
   
@@ -61,6 +68,7 @@ const AuthProvider = ({ children }) => {
   
     const handleSignUp = () => {
       navigate('/signup');
+      setIsErrorInput(false)
     }
 
     const value = {
@@ -69,6 +77,7 @@ const AuthProvider = ({ children }) => {
       handleLogout,
       handleSignUp,
       handleSubmitSignUp,
+      isErrorInput,
     };
 
     // fake API

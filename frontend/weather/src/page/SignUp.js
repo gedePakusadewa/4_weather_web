@@ -1,5 +1,6 @@
 import { AuthContext } from "../App.js";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import GeneralConst from "../resource/General.js"
 import "../style.css";
 
@@ -22,9 +23,13 @@ const SignUp = () =>{
   }
 
   return(
-    <>
-      <div className="form-container">
+    <div className="signup-container">
+      <div className="signup-wrapper">
         <div>
+          <div className="title-login">{GeneralConst.SIGN_UP_TITLE}</div>
+          {context.isErrorInput && (
+            <p className="wrong-username-password">{GeneralConst.WRONG_INPUT_LOGIN}</p>
+          )}
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 
             type="text"
@@ -44,7 +49,7 @@ const SignUp = () =>{
             onChange={(e)=>{updateForm(e)}}
           /><br />
           <button
-          className="btn btn-signup"
+            className="btn btn-signup-submit"
             onClick={
               ()=>context.handleSubmitSignUp(
                 form.username, 
@@ -55,9 +60,16 @@ const SignUp = () =>{
           >
             {GeneralConst.SUBMIT}
           </button>
+          <Link to="/">
+          <button 
+              className="btn btn-back-to-login"
+            >
+              {GeneralConst.BACK_TO_LOGIN}
+            </button>
+          </Link>
         </div>
       </div>      
-    </>
+    </div>
   )
 }
   

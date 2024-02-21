@@ -14,7 +14,11 @@ const General = {
     INPUT_CITY_TITLE:"City",
     INPUT_TEMPERATURE_TITLE:"Available Unit",
     INPUT_DARK_MODE_TITLE:"Use Dark Mode",
-    INPUT_SAVE:"SAVE"
+    INPUT_SAVE:"SAVE",
+    LOGIN_TITLE:"Check Weather",
+    SIGN_UP_TITLE:"Sign Up To Weather",
+    BACK_TO_LOGIN:"Back To Log In",
+    WRONG_INPUT_LOGIN:"Wrong username or password!",
   };
   
   export default General
