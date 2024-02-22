@@ -68,7 +68,9 @@ const Setting = () =>{
 
   return(
     <>    
-      <Navbar />
+      <Navbar
+        activeNavBar={GeneralConst.SETTINGS}
+      />
       <div className="title-container">
         <h1>{GeneralConst.SETTINGS}</h1>
       </div>

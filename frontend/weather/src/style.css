@@ -1,6 +1,6 @@
 .btn{
     border: none;
-    color: white;
+    color: #a2a9c3;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -11,6 +11,10 @@
     cursor: pointer;
     width: 100%;
     background-color: #2e3347;
+}
+
+.btn-active{
+    color: white !important;
 }
 
 input{
@@ -109,6 +113,12 @@ input{
     display: flex;
     height: 50px;
     justify-content: end;
+    margin: 40px;
+    padding: 20px;
+    width: 100px;
+    border-radius: 20px;
+    height: 29vh;
+    background-color: #2e3347;
 }
 
 .btn-navbar{
@@ -154,15 +164,6 @@ input{
     background-color: #2e3347;
 }
 
-.container-navbar{
-    margin: 40px;
-    padding: 20px;
-    width: 80%;
-    border-radius: 20px;
-    height:100%;
-    background-color: #2e3347;
-}
-
 .curr-weather-container{
     display:flex;
     justify-content: space-between;
@@ -200,3 +201,27 @@ input{
     width: 50px;
     height: auto;
 }
+
+/* profile */
+
+.btn-profile{
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 2px;
+    cursor: pointer;
+    background-color: #0098ff;
+    border-radius: 5px;
+}
+
+.input-profile-disable{
+    color: white;
+    border-color: #4a4c57;
+}
+
+/* end profile */

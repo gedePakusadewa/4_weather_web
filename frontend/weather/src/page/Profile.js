@@ -56,40 +56,44 @@ const Profile = () =>{
 
   return(
     <>
-      <Navbar />
+      <Navbar
+        activeNavBar={GeneralConst.PROFILE}
+      />
       <div className="title-container">
         <h1>{GeneralConst.PROFILE}</h1>
-      </div>
-      <div>
-        <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
-        <input 
-          type="input"
-          defaultValue={form.username}
-          name="username"
-          onChange={
-            (e) => {updateForm(e)}
-          }
-        /><br />
-        <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
-        <input
-          type="email"
-          name="email"
-          defaultValue={form.email}
-          onChange={
-            (e) => {updateForm(e)}
-          }
-        /><br />
-        <label htmlFor="title">{GeneralConst.INPUT_CITY_TITLE}</label><br />
-        <input
-          type="input"
-          value={city}
-          disabled={true}
-        /><br />
-        <button
-          onClick={onSubmit}
-        >
-          Update
-        </button>
+        <div>
+          <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
+          <input 
+            type="input"
+            defaultValue={form.username}
+            name="username"
+            onChange={
+              (e) => {updateForm(e)}
+            }
+          /><br />
+          <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
+          <input
+            type="email"
+            name="email"
+            defaultValue={form.email}
+            onChange={
+              (e) => {updateForm(e)}
+            }
+          /><br />
+          <label htmlFor="title">{GeneralConst.INPUT_CITY_TITLE}</label><br />
+          <input
+            className="input-profile-disable"
+            type="input"
+            value={city}
+            disabled={true}
+          /><br />
+          <button
+            className="btn-profile"
+            onClick={onSubmit}
+          >
+            Update
+          </button>
+        </div>
       </div>
     </>
   )

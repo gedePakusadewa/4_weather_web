@@ -32,12 +32,8 @@
   display: flex;
   background-color: #030615;
   width: 100%;
-  height: auto;
+  height: 100vh;
   color: white;
-}
-
-.App-container > div.container-navbar{
-  width: 154px;
 }
 
 .App-container > div.main-container{

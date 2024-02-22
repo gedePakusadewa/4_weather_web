@@ -56,16 +56,53 @@ Key Features:
 Source API -> https://www.weatherapi.com/
 
 ---
+##### Day 12
+- ~profile~
+  - fit bottom style
+  - fit profile component position
+  - update color input "city"
+- ~add active menu in navbar~
+- ~fix background color to full page in every menu~
+- ~fix navbar~
+  - fix width
+  - fix height
+- setting
+  - fix bottom style
+  - add style for setting main component
+  - add city based on available city in API
+  - REMOVE dark mode
+  - add celcius/fahrenheit symbol do dropdown
+
+issue and solution
+  - 
+
+---
 ##### Day 11:
-- update style/code login/sign up page
+- ~update style/code login/sign up page~
   - add backgroung image for login/sign up page
   - add new words to general const
   - udpate some color based on color palete bg image
   - fix error when empty login/signup form is submitted
   - add wrong username/password notifications
 - analyses what think can be improve
- - 
-  
+  - add active menu in navbar
+  - dashboard
+    - fix style in bottom
+    - fix style in air condition
+    - fix style in next day forecast
+    - fix style in today forecast
+    - fix responsive
+  - setting
+    - fix bottom style
+    - add style for setting main component
+    - add city based on available city in API
+    - REMOVE dark mode
+    - add celcius/fahrenheit symbol do dropdown
+  - profile
+    - fit bottom style
+    - fit profile component position
+    - update color input "city"
+
 Issue and solution
 - 
 

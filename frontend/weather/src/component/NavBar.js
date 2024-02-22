@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 import GeneralConst from "../resource/General.js"
 import "../style.css";
 
-function Navbar() {
+function Navbar({activeNavBar}) {
   const context = useContext(AuthContext);
   const [cookies, setCookie] = useCookies(['user']);
 
@@ -15,21 +15,21 @@ function Navbar() {
         <nav>
           <Link to="/">
             <button 
-              className="btn"
+              className={activeNavBar === GeneralConst.DASHBOARD ? "btn btn-active" : "btn"}
             >
               {GeneralConst.DASHBOARD}
             </button>
           </Link>
           <Link to="/settings">
           <button 
-              className="btn"
+              className={activeNavBar === GeneralConst.SETTINGS ? "btn btn-active" : "btn"}
             >
               {GeneralConst.SETTINGS}
             </button>
           </Link>
           <Link to="/profile">
           <button 
-              className="btn"
+             className={activeNavBar === GeneralConst.PROFILE ? "btn btn-active" : "btn"}
             >
               {GeneralConst.PROFILE}
             </button>

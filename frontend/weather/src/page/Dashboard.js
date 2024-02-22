@@ -9,6 +9,8 @@ import {
 import AirConditionConst from "../resource/AirCondition.js";
 import UrlConst from "../resource/Url.js"
 import axios from "axios";
+import Navbar from "../component/NavBar.js";
+import GeneralConst from "../resource/General.js"
 import "../style.css";
 
 const Dashboard = () => {
@@ -107,66 +109,71 @@ const Dashboard = () => {
   }
 
   return(
-    <div className="main-container">
-      <div className="today-container">
-        <div className="curr-weather-container">
-          <div>
-            <span>{city}</span><br />
-            <span>{temp} &deg;C</span>
+    <>
+      <Navbar
+        activeNavBar={GeneralConst.DASHBOARD}
+      />
+      <div className="main-container">
+        <div className="today-container">
+          <div className="curr-weather-container">
+            <div>
+              <span>{city}</span><br />
+              <span>{temp} &deg;C</span>
+            </div>
+            <div>
+              <GetIconWeather
+                condition={condition}
+                iconURL={iconURL}
+              />
+            </div>
           </div>
           <div>
-            <GetIconWeather
-              condition={condition}
-              iconURL={iconURL}
+            <h1>Today forecast (&deg;C)</h1>
+            <div className="wrap-content-today-forecast">
+              {current6hourForecast !== null && (current6hourForecast.map(data => {
+                  return(
+                    <GetIconTodayWeather 
+                      hour={data.hour}
+                      iconURL={data.condition.icon}
+                      degree={data.temp_c}
+                    />
+                  )      
+                })
+              )}
+            </div>
+          </div>
+          <div>
+            <h1>Air Conditions</h1>
+            <div className="wrap-content-air-conditions">
+              <div>
+                <GetIconAirCondition
+                  condition={AirConditionConst.UV_INDEX}
+                  value={uvIndex}
+                />
+                <GetIconAirCondition
+                  condition={AirConditionConst.WIND_SPEED}
+                  value={windSpeed}
+                />
+              </div>
+              <div>
+                <GetIconAirCondition
+                  condition={AirConditionConst.HUMIDITY}
+                  value={humidity}
+                />
+              </div>
+            </div>          
+          </div>
+        </div>
+        <div className="forecast-container">
+          <div>
+            Next Day Forecast
+            <GetIconNextDaysWeather 
+              data={currentNext7DaysForecast}
             />
           </div>
         </div>
-        <div>
-          <h1>Today forecast (&deg;C)</h1>
-          <div className="wrap-content-today-forecast">
-            {current6hourForecast !== null && (current6hourForecast.map(data => {
-                return(
-                  <GetIconTodayWeather 
-                    hour={data.hour}
-                    iconURL={data.condition.icon}
-                    degree={data.temp_c}
-                  />
-                )      
-              })
-            )}
-          </div>
-        </div>
-        <div>
-          <h1>Air Conditions</h1>
-          <div className="wrap-content-air-conditions">
-            <div>
-              <GetIconAirCondition
-                condition={AirConditionConst.UV_INDEX}
-                value={uvIndex}
-              />
-              <GetIconAirCondition
-                condition={AirConditionConst.WIND_SPEED}
-                value={windSpeed}
-              />
-            </div>
-            <div>
-              <GetIconAirCondition
-                condition={AirConditionConst.HUMIDITY}
-                value={humidity}
-              />
-            </div>
-          </div>          
-        </div>
       </div>
-      <div className="forecast-container">
-        <div>
-          Next Day Forecast
-          <GetIconNextDaysWeather 
-            data={currentNext7DaysForecast}
-          />
-        </div>
-      </div>
-    </div>
+    </>
   )
 }
 
