@@ -30,3 +30,5 @@ yarn-error.log*
 *.sqlite3
 
 color palete login.png
+
+file API

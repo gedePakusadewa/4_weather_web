@@ -129,69 +129,6 @@ input{
     background-color: #ffc107;
 }
 
-.today-container{
-    width: 70vw;
-    /* border: 1px solid red; */
-    
-}
-
-.today-container > div {
-    margin-top: 40px;
-    width: 100%;
-    border-radius: 20px;
-    background-color: #2e3347;
-    padding-top: 20px;
-    
-}
-
-.forecast-container{
-    display: flex;
-    width: 30%;
-    justify-content: center;
-    /* border: 1px solid white */
-}
-
-.main-container{
-    display: flex;
-    width: 100%;
-}
-
-.forecast-container > div {
-    margin-top: 40px;
-    padding: 20px;
-    width: 80%;
-    border-radius: 20px;
-    background-color: #2e3347;
-}
-
-.curr-weather-container{
-    display:flex;
-    justify-content: space-between;
-}
-
-.curr-weather-container > div {
-    width: 100%;
-    text-align: center;
-}
-
-.curr-weather-container > div:first-child {
-    text-align: left;
-    font-size: 40px;
-    padding-left: 30px;
-}
-
-.curr-weather-container > div:first-child > span:first-child{
-    padding-bottom: 10px;    
-}
-
-.wrap-content-air-conditions{
-    display: flex;
-}
-
-.wrap-content-today-forecast{
-    display: flex;
-}
-
 .img-main{
     width: 150px;
     height: auto;
@@ -225,3 +162,242 @@ input{
 }
 
 /* end profile */
+
+/* setting */
+.btn-save-setting{
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 2px;
+    cursor: pointer;
+    background-color: #0098ff;
+    border-radius: 5px;
+}
+
+.temperature-input-wrapper{
+    margin-top: 10px;
+}
+
+select{
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* end setting */
+
+/* dashboard */
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main-city-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.main-city-wrapper > div{
+    width: 100%;
+}
+
+.main-city-wrapper > div:nth-child(2){
+    padding-bottom: 30px;
+}
+
+.today-container{
+    width: 55vw;    
+}
+
+.today-container > div {
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color: #2e3347;
+    padding-top: 20px;    
+}
+
+.today-container > div:nth-child(2) {
+    height: 25vh;   
+}
+
+.today-container > div:first-child {
+    margin-top: 40px;  
+}
+
+.curr-weather-container{
+    display:flex;
+    justify-content: space-between;
+    height: 30vh;
+}
+
+.curr-weather-container > div {
+    width: 100%;
+    text-align: center;
+}
+
+.curr-weather-container > div:first-child {
+    text-align: left;
+    font-size: 35px;
+    padding-left: 30px;
+}
+
+.curr-weather-container > div:first-child > span:first-child{
+    padding-bottom: 10px;    
+}
+
+.forecast-container{
+    display: flex;
+    width: 33%;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.forecast-container > div {
+    margin-top: 40px;
+    padding: 20px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: #2e3347;
+}
+
+.content-air-conditions-wrapper{
+    display: flex;
+}
+
+.wrap-content-today-forecast{
+    display: flex;
+    justify-content: space-around;
+    padding-right: 30px;
+}
+
+.today-forecast-wrapper{
+    padding-left: 30px;
+}
+
+.today-forecast-wrapper > span:first-child {
+    font-size: 20px;
+}
+
+.card-today-forecast{
+    border-right: 1px solid #474e6c;
+    width: 100%;
+    text-align: center;
+}
+
+.card-today-forecast:last-child{
+    border: none;
+}
+
+.air-conditions-wrapper{
+    padding-left: 30px;
+}
+
+.air-conditions-wrapper > span:first-child {
+    font-size: 20px;
+}
+
+.main-city-title{
+    font-size: 35px;
+}
+
+.main-region-title{
+    font-size: 15px;
+    color: #a2a9c3;
+}
+
+.main-country-title{
+    font-size: 15px;
+    color: #a2a9c3;
+}
+
+.main-icon-desc{
+    color: #a2a9c3;
+}
+
+.today-forecast-title{
+    padding-bottom: 20px;
+}
+
+.today-forecast-hour{
+    color: #a2a9c3;
+}
+
+.today-forecast-degree{
+    font-weight: 550;
+}
+
+.air-condition-icon-desc{
+    color:#a2a9c3;
+    text-align: left;
+}
+
+.air-condition-value{
+    padding-left: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.air-conditions-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    padding-bottom: 10px;
+}
+
+.air-conditions-uv-and-wind{
+    width: 100%;
+}
+
+.air-conditions-humidity{
+    width: 100%;
+}
+
+.air-condition-title{
+    padding-bottom: 20px;
+}
+
+.forecast-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 9vh;
+    border-bottom: 1px solid #474e6c;
+    width: 100%;
+    padding: 5px 0 0 0;
+}
+
+.forecast-card-time{
+    color:#a2a9c3;
+}
+
+.forecast-card-condition-desc{
+    color:#a2a9c3;
+}
+
+.forecast-card-temp{
+    font-weight: 550;
+}
+
+.forecast-title{
+    padding-bottom: 20px;
+}
+
+.forecast-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* align-content: space-around; */
+
+    /* border: 1px solid red; */
+    height: 90%;
+}
+
+/* end dashboard */
+

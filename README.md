@@ -28,7 +28,7 @@ Key Features:
   Include details like daily highs and lows, precipitation probability, and wind direction.
 - User Preferences:
   Allow users to set their preferred units for temperature (Celsius/Fahrenheit), wind speed, etc.
-- History and Favorites:
+- ~History and Favorites~ (NOT IMPLEMENTED):
   Implement a feature that stores users' search history and allows them to mark locations as favorites.
 - Responsive Design:
   Ensure the application is responsive and works well on various devices, such as desktops, tablets, and mobile phones.
@@ -56,6 +56,18 @@ Key Features:
 Source API -> https://www.weatherapi.com/
 
 ---
+##### Day 13
+- ~dashboard~
+  - fix style in bottom
+  - fix style in air condition
+  - fix style in next day forecast
+  - fix style in today forecast
+
+issue and solution
+- current 6 hour only display 5hour?
+  - just add(+) 2 hour in next 6hour function
+
+---
 ##### Day 12
 - ~profile~
   - fit bottom style
@@ -66,12 +78,34 @@ Source API -> https://www.weatherapi.com/
 - ~fix navbar~
   - fix width
   - fix height
-- setting
+- ~setting~
   - fix bottom style
   - add style for setting main component
   - add city based on available city in API
   - REMOVE dark mode
   - add celcius/fahrenheit symbol do dropdown
+- dashboard
+  - fix style in bottom
+  - fix style in air condition
+  - fix style in next day forecast
+  - fix style in today forecast
+  - fix responsive
+- update later
+  - font color for login/signup, change it to white
+  - in dashboard
+    - update today forecast and next dat forecast so it will display next +6 hour forecast and next 7 day forecast
+    - update degree to fahrenheit if user set it in setting
+    - update display country/region just below city name
+    - in today forecast, there is bug that it will not show time after 23:00
+    - add new paramter in air condition
+  - in settings
+    - add background color like in dashboard
+    - add using kmh or mph
+  - in profile
+    - add background color like in dashboard
+  - add dummy response to minimize call API weather
+  - add loading weather in each component when frontend waiting API data
+  - REMOVE component/input
 
 issue and solution
   - 

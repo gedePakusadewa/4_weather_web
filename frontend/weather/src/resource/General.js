@@ -12,13 +12,16 @@ const General = {
     SETTINGS:"Settings",
     PROFILE:"Profile",
     INPUT_CITY_TITLE:"City",
-    INPUT_TEMPERATURE_TITLE:"Available Unit",
+    INPUT_TEMPERATURE_TITLE:"Available Unit (Celcius is default)",
     INPUT_DARK_MODE_TITLE:"Use Dark Mode",
-    INPUT_SAVE:"SAVE",
+    INPUT_SAVE:"Save",
     LOGIN_TITLE:"Check Weather",
     SIGN_UP_TITLE:"Sign Up To Weather",
     BACK_TO_LOGIN:"Back To Log In",
     WRONG_INPUT_LOGIN:"Wrong username or password!",
+    TODAY_FORECAST:"Today Forecast",
+    AIR_CONDITIONS:"Air Conditions",
+    NEXT_7_DAY_FORECAST:"Next 7 Day Forecast (year-month-date)"
   };
   
   export default General

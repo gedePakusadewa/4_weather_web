@@ -17,6 +17,8 @@ const Dashboard = () => {
   const [cookies, setCookie] = useCookies(['user']);
 
   const [city, setCity] = useState("")
+  const [region, setRegion] = useState("")
+  const [country, setCountry] = useState("")
   const [temp, setTemp] = useState("")
   const [condition, setCondition] = useState("")
   const [uvIndex, setUvIndex] = useState("")
@@ -46,11 +48,14 @@ const Dashboard = () => {
       url: UrlConst.GETWEATHER,
       headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
+      // console.log(res)
       setCity(res.data.location.name)
+      setRegion(res.data.location.region)
+      setCountry(res.data.location.country)
       setTemp(res.data.current.temp_c)
       setCondition(res.data.current.condition.text)
       setUvIndex(res.data.current.uv)
-      setWindSpeed(res.data.current.wind_mph)
+      setWindSpeed(res.data.current.wind_kph)
       setHumidity(res.data.current.humidity)
       setTodayForecast(res.data.forecast.forecastday[0].hour)
       setCurrentLocalTime(res.data.location.localtime)
@@ -64,7 +69,7 @@ const Dashboard = () => {
     if(hour24Data !== null){
       const temp = [];
       let currentLocalTimeHour = currentLocalTime.slice(11, 13);
-      let tempHour = parseInt(currentLocalTimeHour) + 5;
+      let tempHour = parseInt(currentLocalTimeHour) + 7;
       let incre = 0;
 
       hour24Data.map((data, idx) => {
@@ -95,6 +100,7 @@ const Dashboard = () => {
           data.hour.map((item, idx2) => {
             if(idx2 === currentLocalTimeHour){
               item.hour = idx2
+              
               temp[incre] = item
               incre++
             }
@@ -116,9 +122,13 @@ const Dashboard = () => {
       <div className="main-container">
         <div className="today-container">
           <div className="curr-weather-container">
-            <div>
-              <span>{city}</span><br />
-              <span>{temp} &deg;C</span>
+            <div className="main-city-wrapper">
+              <div>
+                <div className="main-city-title">{city}</div>
+                <div className="main-region-title">{region} region</div>
+                <div className="main-country-title">{country}</div>
+              </div>
+              <div>{temp} &deg;C</div>
             </div>
             <div>
               <GetIconWeather
@@ -127,8 +137,8 @@ const Dashboard = () => {
               />
             </div>
           </div>
-          <div>
-            <h1>Today forecast (&deg;C)</h1>
+          <div className="today-forecast-wrapper">
+            <div className="today-forecast-title">{GeneralConst.TODAY_FORECAST}</div>
             <div className="wrap-content-today-forecast">
               {current6hourForecast !== null && (current6hourForecast.map(data => {
                   return(
@@ -142,10 +152,10 @@ const Dashboard = () => {
               )}
             </div>
           </div>
-          <div>
-            <h1>Air Conditions</h1>
-            <div className="wrap-content-air-conditions">
-              <div>
+          <div className="air-conditions-wrapper">
+            <div className="air-condition-title">{GeneralConst.AIR_CONDITIONS}</div>
+            <div className="air-conditions-detail-wrapper">
+              <div className="air-conditions-uv-and-wind">
                 <GetIconAirCondition
                   condition={AirConditionConst.UV_INDEX}
                   value={uvIndex}
@@ -155,7 +165,7 @@ const Dashboard = () => {
                   value={windSpeed}
                 />
               </div>
-              <div>
+              <div className="air-conditions-humidity">
                 <GetIconAirCondition
                   condition={AirConditionConst.HUMIDITY}
                   value={humidity}
@@ -166,10 +176,12 @@ const Dashboard = () => {
         </div>
         <div className="forecast-container">
           <div>
-            Next Day Forecast
-            <GetIconNextDaysWeather 
-              data={currentNext7DaysForecast}
-            />
+            <div className="forecast-title">{GeneralConst.NEXT_7_DAY_FORECAST}</div>
+            <div className="forecast-card-container">
+              <GetIconNextDaysWeather 
+                data={currentNext7DaysForecast}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -32,8 +32,13 @@ const Setting = () =>{
           value={selectedCity}
           onChange={e => setSelectedCity(e.target.value)}
         >
-          <option value="LONDON">London</option>
+          <option value="BANDUNG">Bandung</option>
           <option value="JAKARTA">Jakarta</option>
+          <option value="LONDON">London</option>
+          <option value="LOS_ANGELES">Los Angeles</option>
+          <option value="PERUGIA">Perugia</option>
+          <option value="ROME">Rome</option>
+          <option value="SURABAYA">Surabaya</option>
         </select>
       </div>
     )
@@ -41,16 +46,16 @@ const Setting = () =>{
 
   const InputTemperatureUnit = () => {
     return(
-      <form>
+      <div className="temperature-input-wrapper">
         <label htmlFor="title">{GeneralConst.INPUT_TEMPERATURE_TITLE}</label><br />
         <select
           value={selectedTemperatureUnit}
           onChange={e => setSelectedTemperatureUnit(e.target.value)}
         >
-          <option value="CELCIUS">Celcius</option>
-          <option value="FAHRENHEIT">Fahrenheit</option>
+          <option value="CELCIUS">&deg; C Celcius</option>
+          <option value="FAHRENHEIT">&deg; F Fahrenheit</option>
         </select>
-      </form>
+      </div>
     )
   }
 
@@ -73,17 +78,18 @@ const Setting = () =>{
       />
       <div className="title-container">
         <h1>{GeneralConst.SETTINGS}</h1>
-      </div>
-      <InputCity />
-      <InputTemperatureUnit />
-      <InputIsDarkMode />
-      <div>
-        <button
-          onClick={() => submitData() }
-        >
-          {GeneralConst.INPUT_SAVE}
-        </button>
-      </div>
+        <div>
+          <InputCity />
+          <InputTemperatureUnit />
+          {/* <InputIsDarkMode /> */}
+          <button
+            className="btn-save-setting"
+              onClick={() => submitData()}
+            >
+              {GeneralConst.INPUT_SAVE}
+            </button>
+        </div>
+      </div>      
     </>
   )
 }
