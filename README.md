@@ -1,14 +1,20 @@
 ### This project idea is generated from ChatGPT
 ---
 ## Project desktop preview 
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/1.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/2.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/3.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/4.png)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/5.png)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/6.jpg)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_1.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_2.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_3.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_4.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_5.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/desktop_6.png)
 
 ## Project mobile preview 
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_1.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_2.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_3.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_4.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_5.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/preview/mobile_6.png)
 
 --
 # Project Idea: Weather Dashboard
