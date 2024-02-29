@@ -12,37 +12,39 @@ function Navbar({activeNavBar}) {
   return(
     <div className="container-navbar">
       <div>
-        <nav>
-          <Link to="/">
-            <button 
-              className={activeNavBar === GeneralConst.DASHBOARD ? "btn btn-active" : "btn"}
-            >
-              {GeneralConst.DASHBOARD}
-            </button>
-          </Link>
-          <Link to="/settings">
+        <Link to="/">
           <button 
-              className={activeNavBar === GeneralConst.SETTINGS ? "btn btn-active" : "btn"}
-            >
-              {GeneralConst.SETTINGS}
-            </button>
-          </Link>
-          <Link to="/profile">
+            className={activeNavBar === GeneralConst.DASHBOARD ? "btn btn-active" : "btn"}
+          >
+            {GeneralConst.DASHBOARD}
+          </button>
+        </Link>
+      </div>
+        <Link to="/settings">
           <button 
-             className={activeNavBar === GeneralConst.PROFILE ? "btn btn-active" : "btn"}
-            >
-              {GeneralConst.PROFILE}
-            </button>
-          </Link>
-          {cookies['token'] !== undefined && (
-            <button
-              className="btn"
-              onClick={()=>context.handleLogout(cookies['token'])}
-            >
-              {GeneralConst.LOGOUT}
-            </button>
-          )}
-        </nav>
+            className={activeNavBar === GeneralConst.SETTINGS ? "btn btn-active" : "btn"}
+          >
+            {GeneralConst.SETTINGS}
+          </button>
+        </Link>
+      <div>
+        <Link to="/profile">
+          <button 
+            className={activeNavBar === GeneralConst.PROFILE ? "btn btn-active" : "btn"}
+          >
+            {GeneralConst.PROFILE}
+          </button>
+        </Link>
+      </div>
+      <div>
+        {cookies['token'] !== undefined && (
+          <button
+            className="btn"
+            onClick={()=>context.handleLogout(cookies['token'])}
+          >
+            {GeneralConst.LOGOUT}
+          </button>
+        )}
       </div>
     </div>
   )

@@ -59,9 +59,9 @@ const Profile = () =>{
       <Navbar
         activeNavBar={GeneralConst.PROFILE}
       />
-      <div className="title-container">
-        <h1>{GeneralConst.PROFILE}</h1>
-        <div>
+      <div>
+        <div className="title-profile">{GeneralConst.PROFILE}</div>
+        <div className="profile-wrapper">
           <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
           <input 
             type="input"

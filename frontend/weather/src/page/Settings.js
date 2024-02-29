@@ -76,9 +76,9 @@ const Setting = () =>{
       <Navbar
         activeNavBar={GeneralConst.SETTINGS}
       />
-      <div className="title-container">
-        <h1>{GeneralConst.SETTINGS}</h1>
-        <div>
+      <div>
+        <div className="title-setting">{GeneralConst.SETTINGS}</div>
+        <div className="setting-container">
           <InputCity />
           <InputTemperatureUnit />
           {/* <InputIsDarkMode /> */}

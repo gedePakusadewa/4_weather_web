@@ -32,8 +32,9 @@
   display: flex;
   background-color: #030615;
   width: 100%;
-  height: 100vh;
   color: white;
+  flex-direction: column;
+  height: 200vh;
 }
 
 .App-container > div.main-container{
@@ -46,5 +47,12 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .App-container{
+    flex-direction: row;
+    height: 100vh;
   }
 }

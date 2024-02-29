@@ -109,16 +109,14 @@ input{
 
 /* end sign up  */
 
+/* navbar */
+
 .container-navbar{
     display: flex;
     height: 50px;
-    justify-content: end;
-    margin: 40px;
-    padding: 20px;
-    width: 100px;
-    border-radius: 20px;
-    height: 29vh;
+    width: 100%;
     background-color: #2e3347;
+    justify-content: space-around;
 }
 
 .btn-navbar{
@@ -128,6 +126,19 @@ input{
 .btn-navbar-logout{
     background-color: #ffc107;
 }
+
+@media only screen and (min-width: 768px) {
+    .container-navbar{
+        margin: 40px;
+        padding: 20px;
+        border-radius: 20px;
+        flex-direction: column;
+        width: 100px;
+        height: 29vh;
+    }
+}
+
+/* end navbar */
 
 .img-main{
     width: 150px;
@@ -161,9 +172,40 @@ input{
     border-color: #4a4c57;
 }
 
+.title-profile{
+    font-size: 30px;
+    font-weight: 550;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+.profile-wrapper {
+    border-radius: 20px;
+    background-color: #2e3347;
+    margin: 15px 5px 15px 5px;
+    padding: 10px 15px 10px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .title-profile{
+        margin-top: 30px;
+    }
+
+    .profile-wrapper {
+        width: 100%;
+    }
+}
+
 /* end profile */
 
 /* setting */
+.title-setting{
+    font-size: 30px;
+    font-weight: 550;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
 .btn-save-setting{
     border: none;
     color: white;
@@ -189,13 +231,30 @@ select{
     border-radius: 5px;
 }
 
+.setting-container {
+    border-radius: 20px;
+    background-color: #2e3347;
+    /* border: 1px solid red; */
+    margin: 15px 5px 15px 5px;
+    padding: 10px 0 10px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .title-setting{
+        margin-top: 30px;
+    }
+
+    .setting-container {
+        width: 100%;
+    }
+}
+
 /* end setting */
 
 /* dashboard */
 .main-container{
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-direction: column;
 }
 
 .main-city-wrapper{
@@ -213,7 +272,7 @@ select{
 }
 
 .today-container{
-    width: 55vw;    
+    margin:0 5px 0 5px;    
 }
 
 .today-container > div {
@@ -228,7 +287,7 @@ select{
 }
 
 .today-container > div:first-child {
-    margin-top: 40px;  
+    margin-top: 15px;  
 }
 
 .curr-weather-container{
@@ -254,15 +313,12 @@ select{
 
 .forecast-container{
     display: flex;
-    width: 33%;
-    justify-content: center;
-    margin-left: 10px;
 }
 
 .forecast-container > div {
-    margin-top: 40px;
+    margin: 20px 5px 20px 5px;
     padding: 20px;
-    width: 80%;
+    width: 100%;
     border-radius: 20px;
     background-color: #2e3347;
 }
@@ -397,6 +453,41 @@ select{
 
     /* border: 1px solid red; */
     height: 90%;
+}
+
+.forecast-card-container > div:last-child{
+    border: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container{
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .today-container{
+        width: 730px;  
+    }
+
+    .forecast-container{
+        display: flex;
+        width: 33%;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .forecast-container > div {
+        margin: 40px 5px 0 5px;
+        padding: 40px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #2e3347;
+    }
+
+    .today-container > div:first-child {
+        margin-top: 40px;  
+    }
 }
 
 /* end dashboard */
